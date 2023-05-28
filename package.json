@@ -1,6 +1,6 @@
 {
   "name": "chatgpt4_summarizer_app",
-  "private": true,
+  "private": false,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
