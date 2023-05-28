@@ -23,7 +23,7 @@ const Demo = () => {
                     <input
                         type="url"
                         placeholder="Enter a URL"
-                        value=""
+                        value={article.url}
                         onChange={(e) => setArcticle({ ...article,
                         url: e.target.value})}
                         required
