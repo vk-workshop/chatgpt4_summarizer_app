@@ -19,4 +19,6 @@ export const articleApi = createApi({
             query: (params) => `/summarize?url=${params.articleUrl}&length=3`
         })
     })
-})
+});
+
+export const { useLazyGetSummaryQuery } = articleApi;
