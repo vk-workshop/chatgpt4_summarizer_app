@@ -8,16 +8,31 @@ const Demo = () => {
         summary: '',
     });
 
+    const [allArticles, setAllArticles] = useState([]);
+
     const [getSummary, { error, isFetching }] = useLazyGetSummaryQuery();
+
+    useEffect(() => {
+        const articlesFromLocalStorage = JSON.parse(
+            localStorage.getItem('articles')
+        )
+        if (articlesFromLocalStorage) {
+            setAllArticles(articlesFromLocalStorage)
+        }
+    }, [])
 
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        const { data } = await getSummary({ articleUrl: article.url })
+        const { data } = await getSummary({ articleUrl: article.url });
+
         if (data?.summary) {
             const newArticle = { ...article, summary: data.summary };
+            const updatedAllArticles = [newArticle, ...allArticles];
 
-            setArticle(newArticle)
+            setArticle(newArticle);
+            setAllArticles(updatedAllArticles);
+
             console.log(newArticle)
         }
     }
