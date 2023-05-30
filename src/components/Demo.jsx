@@ -33,7 +33,7 @@ const Demo = () => {
             setArticle(newArticle);
             setAllArticles(updatedAllArticles);
 
-            console.log(newArticle)
+            localStorage.setItem('articles', JSON.stringify(updatedAllArticles))
         }
     }
     return (
@@ -68,6 +68,15 @@ const Demo = () => {
                     </button>
                 </form>
                 {/* Browse URL history*/}
+                <div className="flex flex-col gap-1 max-h-60 overflow-y-auto">
+                    {allArticles.map((item, index) => (
+                        <div
+                            key={`link-${index}`}
+                            onClick={() => setArticle(item)}
+                            className="link_card">
+                        </div>
+                    ))}
+                </div>
             </div>
             {/* Display Results */}
         </section>
