@@ -51,7 +51,7 @@ const Demo = () => {
                         type="url"
                         placeholder="Enter a URL"
                         value={article.url}
-                        onChange={(e) => setArcticle({
+                        onChange={(e) => setArticle({
                             ...article,
                             url: e.target.value
                         })}
@@ -73,7 +73,18 @@ const Demo = () => {
                         <div
                             key={`link-${index}`}
                             onClick={() => setArticle(item)}
-                            className="link_card">
+                            className="link_card"
+                        >
+                            <div className="copy_btn">
+                                <img
+                                    src={copy}
+                                    alt="copy_icon"
+                                    className="w-[40%] h-[40%] object-contain"
+                                />
+                            </div>
+                            <p>
+                                {item.url}
+                            </p>
                         </div>
                     ))}
                 </div>
