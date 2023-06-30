@@ -2,17 +2,17 @@ ChatGPT4 Summarizer Web Application<h1></h1>
 <img src="./src/img/summerize-openAI.jpg" alt="summerize-openAI"/>
 This is a web application that utilizes the power of the ChatGPT4 model to provide text summarization functionality. The application allows users to input large blocks of text and generate concise summaries to extract the most important information.
 
-Live Demo<h2></h2>
-A live demo of the web application can be accessed here.
+<h2>Live Demo</h2>
+A live demo of the web application can be accessed <span> <a href="https://volodymyrkolisnichenko.github.io/chatgpt4_summarizer_app/" target="_blank"> here. </span>
 
-Features<h2></h2>
+<h2>Features</h2>
 Text input field for entering large blocks of text to be summarized.
 Summarization functionality powered by the ChatGPT4 model.
 Options to control the length or level of detail in the generated summaries.
 User-friendly interface for easy interaction.
 Responsive design for optimal usage across different devices.
 
-Technologies Used<h2></h2>
+<h2>Technologies Used</h2>
 HTML: Markup language for creating the structure and content of the web application.
 CSS: Stylesheets for defining the visual appearance and layout of the application.
 JavaScript: Programming language used for interactivity and integration with the ChatGPT4 model.
@@ -22,7 +22,7 @@ Other libraries or frameworks: The project may utilize additional libraries or f
 <h2>Usage</h2>
 To use the web application locally, follow these steps:
 
-Clone the repository:<h3></h3>
+<h3>Clone the repository:</h3>
 git clone https://github.com/volodymyrkolisnichenko/chatgpt4_summarizer_app.git
 
 <h3>Navigate to the project directory:</h3>
@@ -43,4 +43,4 @@ Submit a pull request explaining the changes you made.
 This project showcases the capabilities of the ChatGPT4 model for text summarization. Thank you to all the open-source contributors whose libraries and tools were used in this project.
 
 <h2>Contact</h2>
-For any questions, feedback, or inquiries, please contact <a href="https://github.com/VolodymyrKolisnichenko" target="_blank"> Volodymyr Kolisnichenko.</span> 
+For any questions, feedback, or inquiries, please contact <span> <a href="https://github.com/VolodymyrKolisnichenko" target="_blank"> Volodymyr Kolisnichenko.</span> 
