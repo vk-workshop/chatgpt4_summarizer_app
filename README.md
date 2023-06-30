@@ -1,5 +1,5 @@
 ChatGPT4 Summarizer Web Application<h1></h1>
-<img src="./src/img/summerize-openAI.jpg" alt="summerize-openAI"/>
+<img src="./src/img/summarize-openAI.jpg" alt="summerize-openAI"/>
 This is a web application that utilizes the power of the ChatGPT4 model to provide text summarization functionality. The application allows users to input large blocks of text and generate concise summaries to extract the most important information.
 
 <h2>Live Demo</h2>
