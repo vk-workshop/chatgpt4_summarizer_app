@@ -3,7 +3,7 @@
 This is a web application that utilizes the power of the ChatGPT4 model to provide text summarization functionality. The application allows users to input large blocks of text and generate concise summaries to extract the most important information.
 
 <h2>Live Demo</h2>
-A live demo of the web application can be accessed <span> <a href="https://volodymyrkolisnichenko.github.io/chatgpt4_summarizer_app/" target="_blank"> here. </span>
+A live demo of the web application can be accessed <span> <a href="https://vk-workshop.github.io/chatgpt4_summarizer_app/" target="_blank"> here. </span>
 
 <h2>Features</h2>
 Text input field for entering large blocks of text to be summarized.
@@ -23,7 +23,7 @@ Other libraries or frameworks: The project may utilize additional libraries or f
 To use the web application locally, follow these steps:
 
 <h3>Clone the repository:</h3>
-git clone https://github.com/volodymyrkolisnichenko/chatgpt4_summarizer_app.git
+git clone https://github.com/vk-workshop/chatgpt4_summarizer_app.git
 
 <h3>Navigate to the project directory:</h3>
 cd chatgpt4_summarizer_app
