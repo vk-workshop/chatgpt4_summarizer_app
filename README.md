@@ -41,6 +41,3 @@ Submit a pull request explaining the changes you made.<br>
 
 <h2>Acknowledgments</h2>
 This project showcases the capabilities of the ChatGPT4 model for text summarization. Thank you to all the open-source contributors whose libraries and tools were used in this project.
-
-<h2>Contact</h2>
-For any questions, feedback, or inquiries, please contact <span> <a href="https://github.com/VolodymyrKolisnichenko" target="_blank"> Volodymyr Kolisnichenko.</span> 
