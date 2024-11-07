@@ -11,10 +11,8 @@ const Demo = () => {
   const [allArticles, setAllArticles] = useState([]);
   const [copied, setCopied] = useState("");
 
-  // RTK lazy query
   const [getSummary, { error, isFetching }] = useLazyGetSummaryQuery();
 
-  // Load data from localStorage on mount
   useEffect(() => {
     const articlesFromLocalStorage = JSON.parse(
       localStorage.getItem("articles")
@@ -32,21 +30,22 @@ const Demo = () => {
       (item) => item.url === article.url
     );
 
-    if (existingArticle) return setArticle(existingArticle);
+    if (existingArticle) {
+      return setArticle(existingArticle);
+    }
 
     const { data } = await getSummary({ articleUrl: article.url });
+    
     if (data?.summary) {
       const newArticle = { ...article, summary: data.summary };
       const updatedAllArticles = [newArticle, ...allArticles];
 
-      // update state and local storage
       setArticle(newArticle);
       setAllArticles(updatedAllArticles);
       localStorage.setItem("articles", JSON.stringify(updatedAllArticles));
     }
   };
 
-  // copy the url and toggle the icon for user feedback
   const handleCopy = (copyUrl) => {
     setCopied(copyUrl);
     navigator.clipboard.writeText(copyUrl);
@@ -60,8 +59,7 @@ const Demo = () => {
   };
 
   return (
-    <section className='mt-16 w-full max-w-xl'>
-      {/* Search */}
+    <section className='mt-16 '>
       <div className='flex flex-col w-full gap-2'>
         <form
           className='relative flex justify-center items-center'
@@ -80,7 +78,7 @@ const Demo = () => {
             onChange={(e) => setArticle({ ...article, url: e.target.value })}
             onKeyDown={handleKeyDown}
             required
-            className='url_input peer' // When you need to style an element based on the state of a sibling element, mark the sibling with the peer class, and use peer-* modifiers to style the target element
+            className='url_input peer'
           />
           <button
             type='submit'
@@ -90,7 +88,6 @@ const Demo = () => {
           </button>
         </form>
 
-        {/* Browse History */}
         <div className='flex flex-col gap-1 max-h-60 overflow-y-auto'>
           {allArticles.reverse().map((item, index) => (
             <div
@@ -113,7 +110,6 @@ const Demo = () => {
         </div>
       </div>
 
-      {/* Display Result */}
       <div className='my-10 max-w-full flex justify-center items-center'>
         {isFetching ? (
           <img src={loader} alt='loader' className='w-20 h-20 object-contain' />
