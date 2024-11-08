@@ -1,5 +1,4 @@
 <h1>ChatGPT4 Summarizer Web Application</h1>
-<img src="./src/img/summarize-openAI.png" alt="summerize-openAI"/>
 This is a web application that utilizes the power of the ChatGPT4 model to provide text summarization functionality. The application allows users to input large blocks of text and generate concise summaries to extract the most important information.
 
 <h2>Live Demo</h2>
@@ -17,7 +16,6 @@ HTML: Markup language for creating the structure and content of the web applicat
 CSS: Stylesheets for defining the visual appearance and layout of the application.<br>
 JavaScript: Programming language used for interactivity and integration with the ChatGPT4 model.<br>
 ChatGPT4: State-of-the-art language model used for text summarization. The application leverages the capabilities of the ChatGPT4 model to generate accurate and concise summaries.<br>
-Other libraries or frameworks: The project may utilize additional libraries or frameworks for enhanced user experience and improved performance. Refer to the project's source code for more details.
 
 <h2>Usage</h2>
 To use the web application locally, follow these steps:
