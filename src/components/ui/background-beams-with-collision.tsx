@@ -4,6 +4,9 @@ import { motion, AnimatePresence } from "framer-motion";
 import React, { useRef, useState, useEffect } from "react";
 import Demo from "../Demo";
 import Hero from "../Hero";
+import { CollisionMechanismProps } from "../types/CollisionMechanismProps";
+import { Coordinate } from "../types/Coordinate";
+import { beams } from "../data/beams"
 
 export const BackgroundBeamsWithCollision = ({
   children,
@@ -11,60 +14,6 @@ export const BackgroundBeamsWithCollision = ({
 }) => {
   const containerRef = useRef(null);
   const parentRef = useRef(null);
-
-  const beams = [
-    {
-      initialX: 10,
-      translateX: 10,
-      duration: 7,
-      repeatDelay: 3,
-      delay: 2,
-    },
-    {
-      initialX: 600,
-      translateX: 600,
-      duration: 3,
-      repeatDelay: 3,
-      delay: 4,
-    },
-    {
-      initialX: 100,
-      translateX: 100,
-      duration: 7,
-      repeatDelay: 7,
-      className: "h-6",
-    },
-    {
-      initialX: 400,
-      translateX: 400,
-      duration: 5,
-      repeatDelay: 14,
-      delay: 4,
-    },
-    {
-      initialX: 800,
-      translateX: 800,
-      duration: 11,
-      repeatDelay: 2,
-      className: "h-20",
-    },
-    {
-      initialX: 1000,
-      translateX: 1000,
-      duration: 4,
-      repeatDelay: 2,
-      className: "h-12",
-    },
-    {
-      initialX: 1200,
-      translateX: 1200,
-      duration: 6,
-      repeatDelay: 4,
-      delay: 2,
-      className: "h-6",
-    },
-  ];
-
   return (
     (<div
       ref={parentRef}
@@ -95,12 +44,13 @@ export const BackgroundBeamsWithCollision = ({
   );
 };
 
-const CollisionMechanism = React.forwardRef(({ parentRef, containerRef, beamOptions = {} }, ref) => {
-  const beamRef = useRef(null);
-  const [collision, setCollision] = useState({
-    detected: false,
-    coordinates: null,
-  });
+const CollisionMechanism = React.forwardRef<HTMLDivElement, CollisionMechanismProps>(({ parentRef, containerRef, beamOptions = {} }, ref) => {
+  const beamRef = useRef<HTMLDivElement | null>(null);
+  const [collision, setCollision] = useState<{
+    detected: boolean;
+    coordinates: Coordinate | null;
+  }>({ detected: false, coordinates: null });
+  
   const [beamKey, setBeamKey] = useState(0);
   const [cycleCollisionDetected, setCycleCollisionDetected] = useState(false);
 
@@ -123,7 +73,7 @@ const CollisionMechanism = React.forwardRef(({ parentRef, containerRef, beamOpti
 
           setCollision({
             detected: true,
-            coordinates: {
+            coordinates:{
               x: relativeX,
               y: relativeY,
             },
