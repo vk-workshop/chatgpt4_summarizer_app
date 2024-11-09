@@ -12,15 +12,15 @@ const Hero = () => {
                     GitHub
                 </button>
             </nav>
-            <h1 className="head_text">
+            <h1 className="head_text text-4xl max-md:text-3xl">
                 Summarize Articles with <br className="max-md:hidden" />
                 <span className="orange_gradient">OpenAI GPT-4</span>
             </h1>
-            <h2 className='desc'>
+            <h2 className='desc text-lg max-md:text-base'>
                 Easily read only the main content from web pages.
             </h2>
         </header>
     )
 }
 
-export default Hero
+export default Hero;
